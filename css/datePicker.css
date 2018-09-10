@@ -1,7 +1,7 @@
 .ui-datepicker-wrapper {
 	width: 240px;
 	font-size: 16px;
-	color: #666;
+	color: #000;
 	box-shadow: 2px 2px 8px 2px rgba(128, 128, 128, 0.3);
 	display: none;
 	position: absolute;
@@ -62,4 +62,8 @@
 	border: 1px solid #f0f0f0;
 	font-size: 10px;
 	cursor: pointer;
+}
+
+.ui-datepicker-wrapper .ui-datepicker-body td.gray {
+	color: #bfbfbf;
 }

@@ -1,6 +1,7 @@
 (function() {
     var monthData, //月份数据
-        wrapper; //日历外包元素
+        wrapper, //日历外包元素
+        lastDate; //获取该月份最后一天的日期
     // 构造函数
     var DatePicker = function(inputClassName) {
         var _this_ = this;
@@ -66,9 +67,10 @@
             var lastDateOfLastMonth = lastDayOfLastMonth.getDate(); //获取上个月最后一天的日期
             var preMonthDayCount = firstDayWeekDay - 1; //计算上个月显示几天（比如该月份第一天是周二，上个月就显示1天（2-1））
             var lastDay = new Date(year, month, 0); //获取该月份的最后一天
-            var lastDate = lastDay.getDate(); //获取该月份最后一天的日期
+            lastDate = lastDay.getDate(); //获取该月份最后一天的日期
+            var weekCount = Math.ceil((preMonthDayCount + lastDate) / 7); //获取每个月多少周
 
-            for (var i = 0; i < 7 * 6; i++) {
+            for (var i = 0; i < 7 * weekCount; i++) {
                 var date = i + 1 - preMonthDayCount; //为了让月份第一天显示日期1
                 var showDate = date; //showDate用于计算跨界问题
                 var thisMonth = month;
@@ -126,7 +128,11 @@
                 if (i % 7 === 0) { //一周第一天
                     html += '<tr>';
                 }
-                html += '<td data-date=' + date.date + '>' + date.showDate + '</td>';
+                if (date.date <= 0 || date.date > lastDate) { //非当月的灰色显示
+                    html += '<td class="gray" data-date=' + date.date + '>' + date.showDate + '</td>';
+                } else {
+                    html += '<td data-date=' + date.date + '>' + date.showDate + '</td>';
+                }
                 if (i % 7 === 6) { //一周最后一天
                     html += '</tr>';
                 }
