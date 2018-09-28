@@ -1,0 +1,70 @@
+.datetime_header {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc
+}
+
+.prev_icon,
+.next_icon {
+    display: inline-block;
+    vertical-align: top;
+    width: 20px;
+    height: 20px;
+}
+
+.prev_icon {
+    margin-right: 20px;
+    background: url("../images/left.png") no-repeat
+}
+
+.next_icon {
+    margin-left: 20px;
+    background: url("../images/right.png") no-repeat
+}
+
+.prev_icon:active,
+.next_icon:active,
+#weeklyCanlendarView li a:active {
+    opacity: .8
+}
+
+#weeks_ch,
+#weeklyCanlendarView {
+    overflow: hidden;
+}
+
+#weeks_ch {
+    padding: 10px 0 5px;
+}
+
+#weeks_ch li {
+    line-height: 30px
+}
+
+#weeks_ch li,
+#weeklyCanlendarView li {
+    float: left;
+    display: inline;
+    width: 14.28571428%;
+    text-align: center;
+}
+
+#weeklyCanlendarView li a {
+    display: inline-block;
+    width: 34px;
+    line-height: 34px;
+    border-radius: 50%;
+    color: #0d87ea;
+    text-decoration: none;
+    border: 1px solid transparent
+}
+
+#weeklyCanlendarView li.active a {
+    background: #0d87ea;
+    color: #fff;
+}
+
+#weeklyCanlendarView li.clickActive a {
+    border: 1px solid #0d87ea
+}

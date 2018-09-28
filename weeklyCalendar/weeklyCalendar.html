@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>周历</title>
+    <link rel="stylesheet" type="text/css" href="css/weeklyCalendar.css">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul,
+    li {
+        list-style: none;
+    }
+
+    body {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="ui-datepicker-wrapper">
+        <!-- <div class="datetime_header">
+            <a href="javascript:;" title="上一周" class="prev_icon" id="prev_week"></a>
+            <span><b id="year_selector"></b>年<b id="month_selector"></b>月</span>
+            <a href="javascript:;" title="下一周" class="next_icon" id="next_week"></a>
+        </div>
+        <ul id="weeks_ch"></ul>
+        <ul id="weeklyCanlendarView"></ul> -->
+    </div>
+    <script src="js/WeeklyCalendar.js"></script>
+    <script src="js/EventUtil.js"></script>
+    <script>
+    new WeeklyCalendar();
+    </script>
+</body>
+
+</html>
